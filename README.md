@@ -33,7 +33,19 @@ eta = abc.find_letter_by(position: 7) # => <..@lower="η", @name="Eta", @positio
 puts psi # => Letter #23 'Psi', lowercase 'ψ', uppercase 'Ψ'
 ```
 
-### Get all letters
+#### `Letter` methods
+
+```ruby
+abc = GreekABC::Alphabet.new
+
+omega = abc.find_letter_by(name: 'Omega').lower # => "ω"
+omega = abc.find_letter_by(name: 'Omega').lower # => "Ω"
+omega = abc.find_letter_by(name: 'Omega').position # => 24
+
+alpha = abc.find_letter_by(position: 1).name # => "Alpha"
+```
+
+#### Get all letters
 
 ```ruby
 abc = GreekABC::Alphabet.new
