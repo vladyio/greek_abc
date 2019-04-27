@@ -1,5 +1,7 @@
 # GreekABC
 
+[![Gem Version](https://badge.fury.io/rb/greek_abc.svg)](https://badge.fury.io/rb/greek_abc)
+
 Gem for Greek alphabet manipulations
 
 ## Installation
@@ -20,6 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
+```ruby
+require 'greek_abc'
+
+abc = GreekABC::Alphabet.new
+
+psi = abc.find_letter_by(name: 'Psi') # => <..@lower="ψ", @name="Psi", @position=23, @upper="Ψ">
+eta = abc.find_letter_by(position: 7) # => <..@lower="η", @name="Eta", @position=7, @upper="Η">
+
+puts psi # => Letter #23 'Psi', lowercase 'ψ', uppercase 'Ψ'
+```
+
+### Get all letters
+
+```ruby
+abc = GreekABC::Alphabet.new
+puts abc.letters
+```
 
 ## Development
 
