@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    greek_abc (0.1.0)
+    greek_abc (0.2.0)
 
 GEM
   remote: https://rubygems.org/
