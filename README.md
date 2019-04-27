@@ -59,10 +59,30 @@ abc = GreekABC::Alphabet.new
 puts abc.to_h # => {"Alpha"=>{:position=>1, :lower=>"α", :upper=>"Α"}
 ```
 
-Or a more basic hash from `GreekABC` module itself:
+#### Basic sets of letters
+
+- Hash with letters and their names
 
 ```ruby
 abc = GreekABC::ALPHABET # => {"Alpha"=>"α", "Beta"=>"β", ...}
+```
+
+- Lowercase letters
+
+```ruby
+abc = GreekABC::LOWERS # => ["α", "β", ...]
+```
+
+- Uppercase letters
+
+```ruby
+abc = GreekABC::UPPERS # => ["Α", "Β", ...]
+```
+
+- Lowercase and uppercase together
+
+```ruby
+abc = GreekABC::LOWERS_AND_UPPERS
 ```
 
 ## Development
