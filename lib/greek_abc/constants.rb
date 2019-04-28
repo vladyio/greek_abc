@@ -1,5 +1,4 @@
 module GreekABC
-
   ALPHABET = {
     'Alpha' => 'α',
     'Beta' => 'β',

@@ -2,6 +2,13 @@ module GreekABC
   class Alphabet
     attr_accessor :letters
 
+    ALPHABET.map.with_index(1) do |(name, letter), index|
+      define_singleton_method(:"#{name.downcase}") do
+        Letter.new(position: index, name: name, lower: letter,
+                   upper: letter.upcase)
+      end
+    end
+
     def initialize
       @letters = ALPHABET.map.with_index(1) do |(name, letter), index|
         Letter.new(position: index, name: name, lower: letter,

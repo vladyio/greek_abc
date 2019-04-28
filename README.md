@@ -22,9 +22,19 @@ Or install it yourself as:
 
 ## Usage
 
-```ruby
-require 'greek_abc'
+Add `require 'greek_abc'` to your script.
 
+#### Single letters
+
+```ruby
+GreekABC::Alphabet.alpha # => #<GreekABC::Letter:0x0000557ef0e4fda8 @position=1, @name="Alpha", @lower="α", @upper="Α">
+
+GreekABC::Alphabet.omega # => #<GreekABC::Letter:0x0000557ef0e37a78 @position=24, @name="Omega", @lower="ω", @upper="Ω">
+```
+
+#### Lookup
+
+```ruby
 abc = GreekABC::Alphabet.new
 
 psi = abc.find_letter_by(name: 'Psi') # => <..@lower="ψ", @name="Psi", @position=23, @upper="Ψ">
@@ -39,7 +49,7 @@ puts psi # => Letter #23 'Psi', lowercase 'ψ', uppercase 'Ψ'
 abc = GreekABC::Alphabet.new
 
 omega = abc.find_letter_by(name: 'Omega').lower # => "ω"
-omega = abc.find_letter_by(name: 'Omega').lower # => "Ω"
+omega = abc.find_letter_by(name: 'Omega').upper # => "Ω"
 omega = abc.find_letter_by(name: 'Omega').position # => 24
 
 alpha = abc.find_letter_by(position: 1).name # => "Alpha"
