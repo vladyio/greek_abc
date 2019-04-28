@@ -1,4 +1,4 @@
-# 0.4.0 — April 28, 2019
+# 0.4.1 — April 28, 2019
 
 Functionality enhancement, added `Alphabet` methods for letters.
 
