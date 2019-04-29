@@ -2,6 +2,8 @@
 
 ![Gem](https://img.shields.io/gem/v/greek_abc.svg?color=rgb%28100%2C%20180%2C%200%29&label=gem%20version)
 
+<img src=".logo.png" width="200px" align="right">
+
 Gem for Greek alphabet manipulations
 
 ## Installation
