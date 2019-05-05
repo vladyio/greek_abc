@@ -24,15 +24,15 @@ module GreekABC
         raise LetterLookupError, "Letter does not have parameter `#{parameter}`"
       end
 
-      result = @letters.select do |letter|
+      result = @letters.find do |letter|
         letter if letter.send(parameter.to_sym) == value
       end
 
-      if result.empty?
+      unless result
         raise LetterNotFoundError, "Letter with `#{parameter}: #{value}` not found"
-      else
-        result.first
       end
+
+      result
     end
 
     def to_h
