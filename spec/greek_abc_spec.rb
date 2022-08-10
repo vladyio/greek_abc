@@ -1,9 +1,9 @@
 RSpec.describe GreekABC do
-  it "has a version number" do
+  it 'has a version number' do
     expect(GreekABC::VERSION).not_to be nil
   end
 
-  it "produces letter with all parameteres" do
+  it 'produces letter with all parameteres' do
     letter = GreekABC::Letter.new(position: 0, name: 'alpha', lower: 'α',
                                   upper: 'α'.upcase)
 
@@ -13,7 +13,7 @@ RSpec.describe GreekABC do
     expect(letter.upper).to eq('α'.upcase)
   end
 
-  it "available to find a letter by every parameter" do
+  it 'available to find a letter by every parameter' do
     eta_params = {
       position: 7,
       name: 'Eta',
@@ -26,5 +26,10 @@ RSpec.describe GreekABC do
     expect(abc.find_letter_by(name: eta_params[:name]).position).to eq(eta_params[:position])
     expect(abc.find_letter_by(lower: eta_params[:lower]).position).to eq(eta_params[:position])
     expect(abc.find_letter_by(upper: eta_params[:upper]).position).to eq(eta_params[:position])
+  end
+
+  it 'letter name lookup is case insensitive' do
+    abc = GreekABC::Alphabet.new
+    expect(abc.find_letter_by(name: 'lambda')).to eq(abc.find_letter_by(name: 'Lambda'))
   end
 end

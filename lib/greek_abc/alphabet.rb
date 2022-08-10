@@ -17,7 +17,7 @@ module GreekABC
     end
 
     def find_letter_by(**lookup)
-      parameter = lookup.keys.first
+      parameter = lookup.keys.first.to_sym
       value = lookup.values.first
 
       unless letter_parameter?(parameter)
@@ -25,7 +25,12 @@ module GreekABC
       end
 
       result = @letters.find do |letter|
-        letter if letter.send(parameter.to_sym) == value
+        case parameter
+        when :name
+          letter if letter.send(parameter).downcase == value.downcase
+        else
+          letter if letter.send(parameter) == value
+        end
       end
 
       unless result
