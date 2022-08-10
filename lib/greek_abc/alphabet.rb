@@ -20,9 +20,7 @@ module GreekABC
       parameter = lookup.keys.first.to_sym
       value = lookup.values.first
 
-      unless letter_parameter?(parameter)
-        raise LetterLookupError, "Letter does not have parameter `#{parameter}`"
-      end
+      raise LetterLookupError, "Letter does not have parameter `#{parameter}`" unless letter_parameter?(parameter)
 
       result = @letters.find do |letter|
         case parameter
@@ -33,9 +31,7 @@ module GreekABC
         end
       end
 
-      unless result
-        raise LetterNotFoundError, "Letter with `#{parameter}: #{value}` not found"
-      end
+      raise LetterNotFoundError, "Letter with `#{parameter}: #{value}` not found" unless result
 
       result
     end

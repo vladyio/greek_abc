@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "greek_abc"
+require 'bundler/setup'
+require 'greek_abc'
 
-require "irb"
+require 'irb'
 IRB.start(__FILE__)
