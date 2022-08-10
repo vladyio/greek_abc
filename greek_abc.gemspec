@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "greek_abc"
   spec.version       = GreekABC::VERSION
   spec.authors       = ["Vladislav Andreev"]
-  spec.email         = ["me@vld.by"]
+  spec.email         = ["andreev@vlad.social"]
 
   spec.summary       = %q{Greek alphabet manipulation gem}
   spec.homepage      = "https://github.com/vladyio/greek_abc"
@@ -35,7 +35,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 2.0"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_development_dependency "bundler", "~> 2.3"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.11"
+  spec.add_development_dependency "solargraph", "~> 0.45.0"
 end
