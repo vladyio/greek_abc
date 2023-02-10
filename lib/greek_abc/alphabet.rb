@@ -1,39 +1,17 @@
+# frozen_string_literal: true
+
 module GreekABC
   class Alphabet
     attr_accessor :letters
 
-    ALPHABET.map.with_index(1) do |(name, letter), index|
-      define_singleton_method(:"#{name.downcase}") do
-        Letter.new(position: index, name: name, lower: letter,
-                   upper: letter.upcase)
-      end
-    end
-
     def initialize
-      @letters = ALPHABET.map.with_index(1) do |(name, letter), index|
+      @letters = ALPHABET.map.with_index(1) do |(name, letter_variant), index|
+        letter = letter_variant[0]
+        letter_alt = letter_variant[1]
+
         Letter.new(position: index, name: name, lower: letter,
-                   upper: letter.upcase)
+                   lower_alt: letter_alt, upper: letter.upcase)
       end
-    end
-
-    def find_letter_by(**lookup)
-      parameter = lookup.keys.first.to_sym
-      value = lookup.values.first
-
-      raise LetterLookupError, "Letter does not have parameter `#{parameter}`" unless letter_parameter?(parameter)
-
-      result = @letters.find do |letter|
-        case parameter
-        when :name
-          letter if letter.send(parameter).downcase == value.downcase
-        else
-          letter if letter.send(parameter) == value
-        end
-      end
-
-      raise LetterNotFoundError, "Letter with `#{parameter}: #{value}` not found" unless result
-
-      result
     end
 
     def to_h
@@ -41,6 +19,7 @@ module GreekABC
         hash[letter.name.to_s] = {
           position: letter.position,
           lower: letter.lower,
+          lower_alt: letter.lower_alt,
           upper: letter.upper
         }
       end
@@ -48,13 +27,6 @@ module GreekABC
 
     def to_s
       @letters
-    end
-
-    private
-
-    def letter_parameter?(parameter)
-      parameters = %i[name position lower upper]
-      parameters.include?(parameter)
     end
   end
 end
