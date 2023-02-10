@@ -4,14 +4,18 @@
 
 <img src=".logo.png" width="200px" align="right">
 
-Gem for Greek alphabet manipulations
+Greek alphabet as a gem, nothing extra.
+
+Well documented, covered with tests and RBS.
 
 ## Installation
+
+> [Legacy v0.4.4 branch]()
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'greek_abc', '~> 0.4.4'
+gem 'greek_abc', '~> 2.0.0'
 ```
 
 And then execute:
@@ -24,77 +28,57 @@ Or install it yourself as:
 
 ## Usage
 
-Add `require 'greek_abc'` to your script.
-
-#### Single letters
+**Get an array of all letters**
 
 ```ruby
-GreekABC::Alphabet.alpha # => #<GreekABC::Letter:0x0000557ef0e4fda8 @position=1, @name="Alpha", @lower="α", @upper="Α">
-
-GreekABC::Alphabet.omega # => #<GreekABC::Letter:0x0000557ef0e37a78 @position=24, @name="Omega", @lower="ω", @upper="Ω">
+GreekABC::Alphabet.new.letters
 ```
 
-#### Lookup
+**Look up a letter by attributes**
+
+```ruby
+GreekABC::Alphabet.new.find_letter(name: 'lambda')
+GreekABC::Alphabet.new.find_letter(position: 5)
+```
+
+**Easily reach for the letter attributes**
+
+```ruby
+l = GreekABC::Alphabet.new.find_letter(name: 'lambda')
+
+puts [l.name, l.position, l.lower]
+```
+
+**Get the ABC as a hash:**
 
 ```ruby
 abc = GreekABC::Alphabet.new
-
-psi = abc.find_letter_by(name: 'Psi') # => <..@lower="ψ", @name="Psi", @position=23, @upper="Ψ">
-eta = abc.find_letter_by(position: 7) # => <..@lower="η", @name="Eta", @position=7, @upper="Η">
-
-puts psi # => Letter #23 'Psi', lowercase 'ψ', uppercase 'Ψ'
+puts abc.to_h # => {"Alpha"=>{:position=>1, :lower=>"α", :upper=>"Α" ...
 ```
 
-#### `Letter` methods
+**Print print print!**
 
 ```ruby
-abc = GreekABC::Alphabet.new
+puts GreekABC::Alphabet.new.letters
 
-omega = abc.find_letter_by(name: 'Omega').lower # => "ω"
-omega = abc.find_letter_by(name: 'Omega').upper # => "Ω"
-omega = abc.find_letter_by(name: 'Omega').position # => 24
-
-alpha = abc.find_letter_by(position: 1).name # => "Alpha"
+# ...
+# Letter #16 'Pi', lowercase 'π', uppercase 'Π'
+# Letter #17 'Rho', lowercase 'ρ', uppercase 'Ρ'
+# Letter #18 'Sigma', lowercase 'σ / ς', uppercase 'Σ'
+# ...
 ```
 
-#### Get all letters
+**✨Alternative✨ lowercase Sigma support**
 
 ```ruby
-abc = GreekABC::Alphabet.new
-puts abc.letters
-```
+GreekABC::Alphabet.new.find_letter(name: :sigma)
 
-Also get letters as a hash:
-
-```ruby
-abc = GreekABC::Alphabet.new
-puts abc.to_h # => {"Alpha"=>{:position=>1, :lower=>"α", :upper=>"Α"}
-```
-
-#### Basic sets of letters
-
-- Hash with letters and their names
-
-```ruby
-abc = GreekABC::ALPHABET # => {"Alpha"=>"α", "Beta"=>"β", ...}
-```
-
-- Lowercase letters
-
-```ruby
-abc = GreekABC::LOWERS # => ["α", "β", ...]
-```
-
-- Uppercase letters
-
-```ruby
-abc = GreekABC::UPPERS # => ["Α", "Β", ...]
-```
-
-- Lowercase and uppercase together
-
-```ruby
-abc = GreekABC::LOWERS_AND_UPPERS
+# <GreekABC::Letter:0x00000001078e4c90
+#  @lower="σ",
+#  @lower_alt="ς", <== cool, right?
+#  @name="Sigma",
+#  @position=18,
+#  @upper="Σ">
 ```
 
 ## Development
