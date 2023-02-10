@@ -8,7 +8,8 @@ module GreekABC
   class LetterLookup
     attr_reader :letters
 
-    # All available letter attributes. Used in #letter_parameter?
+    # All available letter attributes.
+    # @see #letter_parameter?
     LOOKUP_PARAMETERS = %i[name position lower lower_alt upper].freeze
 
     # @param [Array<Letters>] letters
@@ -45,6 +46,7 @@ module GreekABC
 
     private
 
+    # @api private
     def letter_parameter?(parameter)
       LOOKUP_PARAMETERS.include?(parameter)
     end
