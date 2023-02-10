@@ -22,6 +22,17 @@ module GreekABC
       end
     end
 
+    # Finds a letter by given lookup parameteres
+    # @example
+    #   GreekABC::Alphabet.new.find_letter(name: 'Lambda') # => #<GreekABC::Letter:...
+    # @param [Hash{Symbol => String, Integer}] lookup_params
+    #   A hash, with some {Letter} attribute as a key and desired lookup value
+    # @return [Letter]
+    # @see LetterLookup
+    def find_letter(**lookup_params)
+      LetterLookup.new(letters).find_letter(**lookup_params)
+    end
+
     # Hash representation of an alphabet
     # @return [Hash{String => String, Integer}]
     def to_h
