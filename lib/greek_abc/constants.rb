@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 module GreekABC
+  #
+  # Hash of full letter names and their lowercase representation variant(s)
+  #
   ALPHABET = {
     'Alpha' => 'α',
     'Beta' => 'β',
