@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GreekABC
   ALPHABET = {
     'Alpha' => 'α',
@@ -17,7 +19,7 @@ module GreekABC
     'Omicron' => 'ο',
     'Pi' => 'π',
     'Rho' => 'ρ',
-    'Sigma' => 'σ',
+    'Sigma' => %w[σ ς],
     'Tau' => 'τ',
     'Upsilon' => 'υ',
     'Phi' => 'φ',
@@ -25,8 +27,4 @@ module GreekABC
     'Psi' => 'ψ',
     'Omega' => 'ω'
   }.freeze
-
-  LOWERS = ALPHABET.values.freeze
-  UPPERS = LOWERS.map(&:upcase).freeze
-  LOWERS_AND_UPPERS = (LOWERS + UPPERS).freeze
 end
