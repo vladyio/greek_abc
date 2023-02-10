@@ -1,9 +1,17 @@
 # frozen_string_literal: true
 
 module GreekABC
+  #
+  # Alphabet representation
+  #
+  # @!attribute [r] letters
+  #   @return [Array<Letter>] an array of all letters of the alphabet
   class Alphabet
     attr_accessor :letters
 
+    # Initialize an Alphabet object, a collection of all letters
+    #
+    # @return [Array<Letter>]
     def initialize
       @letters = ALPHABET.map.with_index(1) do |(name, letter_variant), index|
         letter = letter_variant[0]
@@ -14,8 +22,10 @@ module GreekABC
       end
     end
 
+    # Hash representation of an alphabet
+    # @return [Hash{String => String, Integer}]
     def to_h
-      @letters.each_with_object({}) do |letter, hash|
+      letters.each_with_object({}) do |letter, hash|
         hash[letter.name.to_s] = {
           position: letter.position,
           lower: letter.lower,
@@ -25,8 +35,10 @@ module GreekABC
       end
     end
 
+    # String representation of an alphabet
+    # @return [String]
     def to_s
-      @letters
+      letters
     end
   end
 end
