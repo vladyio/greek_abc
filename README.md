@@ -11,7 +11,7 @@ Gem for Greek alphabet manipulations
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'greek_abc'
+gem 'greek_abc', '~> 0.4.4'
 ```
 
 And then execute:
