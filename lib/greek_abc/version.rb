@@ -1,3 +1,3 @@
 module GreekABC
-  VERSION = '0.4.4'.freeze
+  VERSION = '2.0.0'.freeze
 end
