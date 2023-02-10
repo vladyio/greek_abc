@@ -28,7 +28,7 @@ module GreekABC
     # @param [Hash{Symbol => String, Integer}] lookup_params
     #   A hash, with some {Letter} attribute as a key and desired lookup value
     # @return [Letter]
-    # @see LetterLookup
+    # @see LetterLookup#find_letter
     def find_letter(**lookup_params)
       LetterLookup.new(letters).find_letter(**lookup_params)
     end
