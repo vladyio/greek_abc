@@ -10,7 +10,7 @@ Well documented, covered with tests and RBS.
 
 ## Installation
 
-> [Legacy v0.4.4 branch]()
+> [Legacy v0.4.4](https://github.com/vladyio/greek_abc/tree/v0.4.4)
 
 Add this line to your application's Gemfile:
 
