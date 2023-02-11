@@ -17,6 +17,8 @@ Gem::Specification.new do |spec|
   spec.metadata['source_code_uri'] = 'https://github.com/vladyio/greek_abc'
   spec.metadata['changelog_uri'] = 'https://github.com/vladyio/greek_abc/blob/master/CHANGELOG.md'
 
+  spec.metadata['steep_types'] = 'sig'
+
   spec.required_ruby_version = '>= 2.7.0'
 
   # Specify which files should be added to the gem when it is released.
