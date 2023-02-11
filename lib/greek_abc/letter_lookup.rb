@@ -46,7 +46,6 @@ module GreekABC
 
     private
 
-    # @api private
     def letter_parameter?(parameter)
       LOOKUP_PARAMETERS.include?(parameter)
     end
