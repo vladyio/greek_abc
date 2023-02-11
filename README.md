@@ -12,6 +12,8 @@ Well documented, covered with tests and RBS.
 
 > [Legacy v0.4.4](https://github.com/vladyio/greek_abc/tree/v0.4.4)
 
+> Ruby `>= 2.7` is recommended
+
 Add this line to your application's Gemfile:
 
 ```ruby
