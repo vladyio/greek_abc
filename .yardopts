@@ -1,1 +1,3 @@
 --private
+-r README.md
+--exclude lib/greek_abc/version.rb
