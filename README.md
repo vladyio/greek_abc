@@ -28,20 +28,20 @@ Or install it yourself as:
 
 ## Usage
 
-**Get an array of all letters**
+**🔤 Get an array of all letters**
 
 ```ruby
 GreekABC::Alphabet.new.letters
 ```
 
-**Look up a letter by attributes**
+**🔎 Look up a letter by attributes**
 
 ```ruby
 GreekABC::Alphabet.new.find_letter(name: 'lambda')
 GreekABC::Alphabet.new.find_letter(position: 5)
 ```
 
-**Easily reach for the letter attributes**
+**🫳🏻 Easily reach for the letter attributes**
 
 ```ruby
 l = GreekABC::Alphabet.new.find_letter(name: 'lambda')
@@ -49,14 +49,14 @@ l = GreekABC::Alphabet.new.find_letter(name: 'lambda')
 puts [l.name, l.position, l.lower]
 ```
 
-**Get the ABC as a hash:**
+**#️⃣ Get the ABC as a hash:**
 
 ```ruby
 abc = GreekABC::Alphabet.new
 puts abc.to_h # => {"Alpha"=>{:position=>1, :lower=>"α", :upper=>"Α" ...
 ```
 
-**Print print print!**
+**🖨️ Print print print!**
 
 ```ruby
 puts GreekABC::Alphabet.new.letters
