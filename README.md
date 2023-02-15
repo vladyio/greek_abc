@@ -6,7 +6,8 @@
 
 Greek alphabet as a gem, nothing extra.
 
-Well documented, covered with tests and RBS.
+Well [documented](https://rubydoc.info/github/vladyio/greek_abc/master), covered with [tests](/spec)
+and [RBS](/sig).
 
 ## Installation
 
