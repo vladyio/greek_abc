@@ -7,13 +7,14 @@ module GreekABC
   # @!attribute [r] letters
   #   @return [Array<Letter>] an array of all letters of the alphabet
   class Alphabet
-    attr_accessor :letters
+    attr_reader :letters
 
     # Initialize an Alphabet object, a collection of all letters
     #
     # @return [Array<Letter>]
     def initialize
       @letters = ALPHABET.map.with_index(1) do |(name, letter_variant), index|
+        # @type var letter_variant: String | Array[untyped]
         letter = letter_variant[0]
         letter_alt = letter_variant[1]
 
@@ -25,7 +26,7 @@ module GreekABC
     # Finds a letter by given lookup parameteres
     # @example
     #   GreekABC::Alphabet.new.find_letter(name: 'Lambda') # => #<GreekABC::Letter:...
-    # @param [Hash{Symbol => String, Integer}] lookup_params
+    # @param [Hash{Symbol => String, Integer, nil}] lookup_params
     #   A hash, with some {Letter} attribute as a key and desired lookup value
     # @return [Letter]
     # @see LetterLookup#find_letter

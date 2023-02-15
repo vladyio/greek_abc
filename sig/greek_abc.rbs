@@ -1,0 +1,62 @@
+module GreekABC
+  ALPHABET: Hash[String, String | Array[String]]
+
+  VERSION: String
+end
+
+module GreekABC
+  class Alphabet
+    attr_accessor letters: Array[GreekABC::Letter]
+
+    def initialize: () -> void
+
+    def find_letter: (**untyped lookup_params) -> GreekABC::Letter
+
+    def to_h: () -> Hash[String, String | Integer]
+    def to_s: () -> untyped
+  end
+end
+
+module GreekABC
+  class GreekABCError < StandardError
+  end
+
+  class LetterLookupParamsError < GreekABCError
+    def initialize: (Symbol wrong_parameter) -> void
+  end
+
+  class LetterNotFoundError < GreekABCError
+    def initialize: (Symbol parameter, String | Integer | nil value) -> void
+  end
+end
+
+module GreekABC
+  class Letter
+    attr_reader position: Integer
+    attr_reader name: String
+    attr_reader lower: String
+    attr_reader lower_alt: String?
+    attr_reader upper: String
+
+    def initialize: (position: Integer, name: String, lower: String,
+                     upper: String, ?lower_alt: String?) -> void
+
+    def to_s: () -> String
+  end
+end
+
+module GreekABC
+  class LetterLookup
+    attr_reader letters: Array[GreekABC::Letter]
+
+    LOOKUP_PARAMETERS: Array[Symbol]
+
+    def initialize: (Array[GreekABC::Letter] letters) -> untyped
+
+    def find_letter: (**untyped lookup_params) -> GreekABC::Letter
+
+    private
+
+    def letter_parameter?: (Symbol parameter) -> bool
+  end
+end

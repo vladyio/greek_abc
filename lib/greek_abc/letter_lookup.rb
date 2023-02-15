@@ -6,6 +6,7 @@ module GreekABC
   # @!attribute [r] letters
   #   @return [Array<Letter>]
   class LetterLookup
+    # @dynamic letters
     attr_reader :letters
 
     # All available letter attributes.
@@ -30,6 +31,7 @@ module GreekABC
     # @raise [LetterNotFoundError] if a letter with given parameters does not exist
     # @see Alphabet#find_letter
     def find_letter(**lookup_params) # rubocop:disable Metrics/AbcSize
+      # @type var lookup_params: Hash[Symbol | untyped, String | Integer | nil]
       parameter = lookup_params.keys.first.to_sym
       value = lookup_params.values.first
 
