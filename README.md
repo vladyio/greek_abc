@@ -1,6 +1,6 @@
 # GreekABC
 
-![Gem](https://img.shields.io/gem/v/greek_abc.svg?color=rgb%28100%2C%20180%2C%200%29&label=gem%20version)
+[![Gem Version](https://badge.fury.io/rb/greek_abc.svg)](https://badge.fury.io/rb/greek_abc)
 
 <img src=".logo.png" width="200px" align="right">
 
