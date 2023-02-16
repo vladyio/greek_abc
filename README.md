@@ -1,6 +1,7 @@
 # GreekABC
 
 [![Gem Version](https://badge.fury.io/rb/greek_abc.svg)](https://badge.fury.io/rb/greek_abc)
+![RSpec status](https://github.com/vladyio/greek_abc/actions/workflows/ci.yml/badge.svg)
 
 <img src=".logo.png" width="200px" align="right">
 
